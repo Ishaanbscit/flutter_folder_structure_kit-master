@@ -1,0 +1,85 @@
+name: t_store
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Utility Packages
+  http: ^1.2.2  # For making HTTP requests
+  intl: ^0.19.0  # For internationalization and date formatting
+  logger: ^2.4.0  # For logging
+  url_launcher: ^6.3.0  # For launching URLs
+  provider: ^6.1.2  # For state management using the provider pattern
+  flutter_native_splash: ^2.4.1  # For native splash screen
+  smooth_page_indicator: ^1.2.0+3  # For smooth page indicators
+  connectivity_plus: ^6.0.5  # For checking connectivity status
+  lottie: ^3.1.2  # For Lottie animations
+  
+  # Icons
+  iconsax: ^0.0.8  # For custom icon set
+  cupertino_icons: ^1.0.8  # For iOS style icons
+  
+  # State Management
+  get: ^4.6.6  # For state management and routing
+  get_storage: ^2.1.1  # For persistent storage with GetX
+  
+  # Product Specific
+  readmore: ^3.0.0  # For expandable text widgets
+  carousel_slider: ^5.0.0  # For image sliders
+  flutter_rating_bar: ^4.0.1  # For rating bar widget
+  capped_progress_indicator: ^0.0.2  # For capped progress indicators
+
+  # Firebase
+  firebase_core: ^3.6.0  # Core Firebase library
+  firebase_auth: ^5.3.1  # For Firebase authentication
+  google_sign_in: ^6.2.1  # For Google sign-in
+  flutter_facebook_auth: ^7.1.1  # For Facebook authentication
+  cloud_firestore: ^5.4.3  # For Firestore database
+  firebase_storage: ^12.3.2  # For Firebase storage
+  flutter_secure_storage: ^9.2.2  # For secure storage
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter  # Flutter testing library
+  flutter_lints: ^5.0.0  # Linter for Dart and Flutter projects
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logos/
+    - assets/icons/brands/
+    - assets/images/content/
+    - assets/images/banners/
+    - assets/images/reviews/
+    - assets/images/products/
+    - assets/icons/categories/
+    - assets/images/animations/
+    - assets/icons/payment_methods/
+    - assets/images/on_boarding_images/
+    
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 800

@@ -1,0 +1,63 @@
+plugins{
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+// Fallback defaults if properties are missing in local.properties
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode', '1')
+def flutterVersionName = localProperties.getProperty('flutter.versionName', '1.0')
+
+android {
+    namespace "com.example.t_store"
+    compileSdkVersion Integer.parseInt(localProperties.getProperty('flutter.compileSdkVersion', '34')) // Latest compile SDK version
+    ndkVersion localProperties.getProperty('flutter.ndkVersion', '25.1.8937393') // Latest NDK version as fallback
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com.example.t_store"
+        minSdkVersion Integer.parseInt(localProperties.getProperty('flutter.minSdkVersion', '23')) // Minimum SDK version set to 21
+        targetSdkVersion Integer.parseInt(localProperties.getProperty('flutter.targetSdkVersion', '34')) // Latest target SDK version
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug // Signing config for release build (can be modified for production)
+        }
+    }
+}
+
+flutter {
+    source = '../..'
+}
+
+dependencies {
+    // Add any additional dependencies if required
+    implementation platform('com.google.firebase:firebase-bom:30.0.0')
+  implementation 'com.google.firebase:firebase-auth'
+}
